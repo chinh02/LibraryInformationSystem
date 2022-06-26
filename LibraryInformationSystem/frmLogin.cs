@@ -62,5 +62,19 @@ namespace LibraryInformationSystem
             }
             con.Close();
         }
+
+        private void txtUserName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUserName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Return)
+            {
+                this.SelectNextControl(this.ActiveControl, true, true, true, true);
+                e.Handled = true;
+            }
+        }
     }
 }
