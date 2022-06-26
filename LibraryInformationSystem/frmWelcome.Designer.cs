@@ -38,9 +38,10 @@ namespace LibraryInformationSystem
             this.button1.BackColor = System.Drawing.Color.RoyalBlue;
             this.button1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(236, 146);
+            this.button1.Location = new System.Drawing.Point(177, 119);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(154, 79);
+            this.button1.Size = new System.Drawing.Size(116, 64);
             this.button1.TabIndex = 0;
             this.button1.Text = "Đăng nhập";
             this.button1.UseVisualStyleBackColor = false;
@@ -51,9 +52,10 @@ namespace LibraryInformationSystem
             this.button2.BackColor = System.Drawing.Color.RoyalBlue;
             this.button2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(236, 291);
+            this.button2.Location = new System.Drawing.Point(177, 236);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(154, 85);
+            this.button2.Size = new System.Drawing.Size(116, 69);
             this.button2.TabIndex = 0;
             this.button2.Text = "Tìm kiếm";
             this.button2.UseVisualStyleBackColor = false;
@@ -61,12 +63,14 @@ namespace LibraryInformationSystem
             // 
             // frmWelcome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(643, 511);
+            this.ClientSize = new System.Drawing.Size(474, 415);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmWelcome";
             this.Text = "frmWelcome";
             this.ResumeLayout(false);
