@@ -10,10 +10,10 @@ namespace LibraryInformationSystem.Model
     {
         public string readerID { get; set; }
         public string readerName { get; set; }
-        public DateTime readerDOB { get; set; }
+        public string readerDOB { get; set; }
         public string readerJob { get; set; }
-        public DateTime validDate { get; set; }
-        public DateTime expiredDate { get; set; }
+        public string validDate { get; set; }
+        public string readerGender{get; set; }
 
-    }
+}
 }

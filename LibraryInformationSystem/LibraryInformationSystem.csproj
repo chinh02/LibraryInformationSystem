@@ -87,12 +87,6 @@
     <Compile Include="Model\Reader.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\frmExtendPopUp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\frmExtendPopUp.Designer.cs">
-      <DependentUpon>frmExtendPopUp.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\ucFrmAuthor.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -117,12 +111,6 @@
     <Compile Include="View\ucFrmReader.Designer.cs">
       <DependentUpon>ucFrmReader.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ucFrmReaderRegister.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\ucFrmReaderRegister.Designer.cs">
-      <DependentUpon>ucFrmReaderRegister.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -145,9 +133,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="View\frmExtendPopUp.resx">
-      <DependentUpon>frmExtendPopUp.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\ucFrmAuthor.resx">
       <DependentUpon>ucFrmAuthor.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,9 +144,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\ucFrmReader.resx">
       <DependentUpon>ucFrmReader.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\ucFrmReaderRegister.resx">
-      <DependentUpon>ucFrmReaderRegister.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="LibraryMngDataSet.xsc">
       <DependentUpon>LibraryMngDataSet.xsd</DependentUpon>

@@ -11,9 +11,9 @@ namespace LibraryInformationSystem.Model
         public string cardID { get; set; }
         public string readerID { get; set; }
         public string bookID { get; set; }
-        public DateTime borrowedDate { get; set; }
+        public string borrowedDate { get; set; }
         public string status { get; set; }
-        public DateTime supposedReturn { get; set; }
+        public string supposedReturn { get; set; }
         public DateTime actualReturn { get; set; }
         public string note { get; set; }
 

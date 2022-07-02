@@ -12,7 +12,7 @@ namespace LibraryInformationSystem.View
 {
     public partial class ucFrmReader : UserControl
     {
-        
+        public bool AddNewFlag, UpdateFlag, DeleteFlag;
         public ucFrmReader()
         {
             InitializeComponent();
@@ -28,6 +28,9 @@ namespace LibraryInformationSystem.View
             Controller.ReaderController readerController = new Controller.ReaderController();
             
             readerGridView.DataSource = readerController.LoadReader();
+            AddNewFlag = false;
+            UpdateFlag = false;
+            DeleteFlag = false;
         }
 
         private void readerGridView_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -44,43 +47,25 @@ namespace LibraryInformationSystem.View
             txtReaderDOB.Text = readerGridView.Rows[i].Cells["ReaderDOB"].Value.ToString();
             txtReaderJob.Text = readerGridView.Rows[i].Cells["ReaderJob"].Value.ToString();
             txtValidDate.Text = readerGridView.Rows[i].Cells["ValidDate"].Value.ToString();
-            txtExpiredDate.Text = readerGridView.Rows[i].Cells["ExpiredDate"].Value.ToString();
+            txtReaderGender.Text = readerGridView.Rows[i].Cells["Gender"].Value.ToString();
 
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if(txtIDReader != null)
-            {
-                Controller.ReaderController readerController = new Controller.ReaderController();
-                readerController.DeleteReader(txtIDReader.Text);
-                ResetGridView();
-                ucFrmReader_Load(sender, e);
-            }
-        }
-        private void ResetGridView()
-        {
-            txtIDReader.ResetText();
-            txtReaderName.ResetText();
-            txtReaderDOB.ResetText();
-            txtReaderJob.ResetText();
-            txtValidDate.ResetText();
-            txtExpiredDate.ResetText();
+            AddNewFlag = false;
+            btnFunction.Visible = true;
+            DeleteFlag = true;
+            UpdateFlag = false;
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Model.Reader reader = new Model.Reader();
-            reader.readerDOB = DateTime.ParseExact(txtReaderDOB.Text, "MM'/'dd'/'yyyy",null);
-            reader.readerJob = txtReaderJob.Text;
-            reader.readerName = txtReaderName.Text;
-            reader.validDate = DateTime.ParseExact(txtValidDate.Text, "MM'/'dd'/'yyyy", null);
-            reader.expiredDate = DateTime.ParseExact(txtExpiredDate.Text, "MM'/'dd'/'yyyy", null);
-            Controller.ReaderController readerController = new Controller.ReaderController();
-            readerController.AddReader(reader);
-            ucFrmReader_Load(sender, e);
-            ResetGridView();
+            AddNewFlag = true;
+            btnFunction.Visible = true;
+            DeleteFlag = false;
+            UpdateFlag = false;
 
             
         }
@@ -92,17 +77,10 @@ namespace LibraryInformationSystem.View
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Model.Reader reader = new Model.Reader();
-            Random random = new Random();
-            reader.readerDOB = DateTime.ParseExact(txtReaderDOB.Text, "MM'/'dd'/'yyyy", null);
-            reader.readerJob = txtReaderJob.Text;
-            reader.readerName = txtReaderName.Text;
-            reader.validDate = DateTime.ParseExact(txtValidDate.Text, "MM'/'dd'/'yyyy", null);
-            reader.expiredDate = DateTime.ParseExact(txtExpiredDate.Text, "MM'/'dd'/'yyyy", null);
-            Controller.ReaderController readerController = new Controller.ReaderController();
-            readerController.UpdateReader(reader);
-            ucFrmReader_Load(sender, e);
-            ResetGridView();
+            AddNewFlag = false;
+            btnFunction.Visible = true;
+            DeleteFlag = false;
+            UpdateFlag = true;
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -180,6 +158,55 @@ namespace LibraryInformationSystem.View
         private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void btnFunction_Click(object sender, EventArgs e)
+        {
+            if (AddNewFlag == true)
+            {
+                Model.Reader reader = new Model.Reader();
+                reader.readerDOB = txtReaderDOB.Text;
+                reader.readerJob = txtReaderJob.Text;
+                reader.readerName = txtReaderName.Text;
+                reader.validDate = txtValidDate.Text;
+                reader.readerGender = txtReaderGender.Text;
+                Controller.ReaderController readerController = new Controller.ReaderController();
+                readerController.AddReader(reader);
+                ucFrmReader_Load(sender, e);
+                ResetGridView();
+            } else if (UpdateFlag == true)
+            {
+                Model.Reader reader = new Model.Reader();
+                reader.readerID = txtIDReader.Text;
+                reader.readerDOB = txtReaderDOB.Text;
+                reader.readerJob = txtReaderJob.Text;
+                reader.readerName = txtReaderName.Text;
+                reader.validDate = txtValidDate.Text;
+                reader.readerGender = txtReaderGender.Text;
+                Controller.ReaderController readerController = new Controller.ReaderController();
+                readerController.UpdateReader(reader);
+                ucFrmReader_Load(sender, e);
+                ResetGridView();
+            } else if(DeleteFlag == true)
+            {
+                if (txtIDReader != null)
+                {
+                    Controller.ReaderController readerController = new Controller.ReaderController();
+                    readerController.DeleteReader(txtIDReader.Text);
+                    ResetGridView();
+                    ucFrmReader_Load(sender, e);
+                }
+            }
+        }
+
+        private void ResetGridView()
+        {
+            txtIDReader.Clear();
+            txtReaderDOB.Clear();
+            txtReaderGender.Clear();
+            txtReaderJob.Clear();
+            txtValidDate.Clear();
+            txtReaderName.Clear();
         }
     }
 }

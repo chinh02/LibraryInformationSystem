@@ -42,6 +42,21 @@ namespace LibraryInformationSystem.Controller
             string sql = @"UPDATE LibMngm.Circulations SET SupposedReturn = DATEADD(week,2,SupposedReturn) WHERE CardID = '" + cardID+"'";
             Execute(sql);
         }
+        public void ReturnCard(string cardID)
+        {
+            string sql = @"UPDATE LibMngm.Circulations SET Status = N'Đã trả', ActualReturn = CONVERT(DATE,CAST(GETDATE() AS DATE))  WHERE CardID = '" + cardID + "'";
+            Execute(sql);
+        }
+        public DataTable SearchByReader(string readerID)
+        {
+            string sql = @"SELECT * FROM LibMngm.Circulations WHERE ReaderID = '" + readerID + "'";
+             return GetData(sql);
+        }
 
+        public DataTable SearchByBook(string bookID)
+        {
+            string sql = @"SELECT * FROM LibMngm.Circulations WHERE BookID = '" + bookID + "'";
+            return GetData(sql);
+        }
     }
 }
