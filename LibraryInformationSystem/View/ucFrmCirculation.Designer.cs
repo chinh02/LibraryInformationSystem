@@ -39,9 +39,13 @@ namespace LibraryInformationSystem.View
             this.rbReader = new System.Windows.Forms.RadioButton();
             this.rbBook = new System.Windows.Forms.RadioButton();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.txtReaderJob = new System.Windows.Forms.TextBox();
             this.txtBookAuthor = new System.Windows.Forms.TextBox();
+            this.txtReaderName = new System.Windows.Forms.TextBox();
             this.txtBookName = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.lbl6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -52,10 +56,10 @@ namespace LibraryInformationSystem.View
             this.txtBorrowedDate = new System.Windows.Forms.TextBox();
             this.txtActualReturn = new System.Windows.Forms.TextBox();
             this.txtReaderID = new System.Windows.Forms.TextBox();
+            this.lblStatus = new System.Windows.Forms.Label();
             this.txtBookIDCir = new System.Windows.Forms.TextBox();
             this.txtCardID = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.lblStatus = new System.Windows.Forms.Label();
             this.lblCardID = new System.Windows.Forms.Label();
             this.lblSupposedReturn = new System.Windows.Forms.Label();
             this.lblBorrowedDate = new System.Windows.Forms.Label();
@@ -66,14 +70,6 @@ namespace LibraryInformationSystem.View
             this.btnExtend = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
             this.grdCirculation = new System.Windows.Forms.DataGridView();
-            this.libraryMngDataSet = new LibraryInformationSystem.LibraryMngDataSet();
-            this.circulationsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.circulationsTableAdapter = new LibraryInformationSystem.LibraryMngDataSetTableAdapters.CirculationsTableAdapter();
-            this.extendGroup = new System.Windows.Forms.GroupBox();
-            this.btnConfirmExtend = new System.Windows.Forms.Button();
-            this.grpTimeExtend = new System.Windows.Forms.GroupBox();
-            this.rb2Week = new System.Windows.Forms.RadioButton();
-            this.rb1Week = new System.Windows.Forms.RadioButton();
             this.CardID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BookID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ReaderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,10 +78,14 @@ namespace LibraryInformationSystem.View
             this.ActualReturn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Note = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lbl6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtReaderName = new System.Windows.Forms.TextBox();
-            this.txtReaderJob = new System.Windows.Forms.TextBox();
+            this.libraryMngDataSet = new LibraryInformationSystem.LibraryMngDataSet();
+            this.circulationsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.circulationsTableAdapter = new LibraryInformationSystem.LibraryMngDataSetTableAdapters.CirculationsTableAdapter();
+            this.extendGroup = new System.Windows.Forms.GroupBox();
+            this.btnConfirmExtend = new System.Windows.Forms.Button();
+            this.grpTimeExtend = new System.Windows.Forms.GroupBox();
+            this.rb2Week = new System.Windows.Forms.RadioButton();
+            this.rb1Week = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -102,6 +102,7 @@ namespace LibraryInformationSystem.View
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.groupBox1.Controls.Add(this.extendGroup);
             this.groupBox1.Controls.Add(this.btnSearch);
             this.groupBox1.Controls.Add(this.groupBox4);
             this.groupBox1.Controls.Add(this.groupBox2);
@@ -203,6 +204,14 @@ namespace LibraryInformationSystem.View
             this.groupBox5.Text = "Thông tin sách";
             this.groupBox5.Enter += new System.EventHandler(this.groupBox5_Enter);
             // 
+            // txtReaderJob
+            // 
+            this.txtReaderJob.Location = new System.Drawing.Point(123, 166);
+            this.txtReaderJob.Multiline = true;
+            this.txtReaderJob.Name = "txtReaderJob";
+            this.txtReaderJob.Size = new System.Drawing.Size(100, 22);
+            this.txtReaderJob.TabIndex = 3;
+            // 
             // txtBookAuthor
             // 
             this.txtBookAuthor.Location = new System.Drawing.Point(123, 70);
@@ -210,6 +219,15 @@ namespace LibraryInformationSystem.View
             this.txtBookAuthor.Name = "txtBookAuthor";
             this.txtBookAuthor.Size = new System.Drawing.Size(100, 22);
             this.txtBookAuthor.TabIndex = 3;
+            // 
+            // txtReaderName
+            // 
+            this.txtReaderName.Location = new System.Drawing.Point(123, 118);
+            this.txtReaderName.Multiline = true;
+            this.txtReaderName.Name = "txtReaderName";
+            this.txtReaderName.Size = new System.Drawing.Size(100, 22);
+            this.txtReaderName.TabIndex = 1;
+            this.txtReaderName.TextChanged += new System.EventHandler(this.txtBookID_TextChanged);
             // 
             // txtBookName
             // 
@@ -220,6 +238,15 @@ namespace LibraryInformationSystem.View
             this.txtBookName.TabIndex = 1;
             this.txtBookName.TextChanged += new System.EventHandler(this.txtBookID_TextChanged);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(4, 166);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(59, 17);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Chức vụ";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -228,6 +255,16 @@ namespace LibraryInformationSystem.View
             this.label3.Size = new System.Drawing.Size(55, 17);
             this.label3.TabIndex = 0;
             this.label3.Text = "Tác giả";
+            // 
+            // lbl6
+            // 
+            this.lbl6.AutoSize = true;
+            this.lbl6.Location = new System.Drawing.Point(5, 119);
+            this.lbl6.Name = "lbl6";
+            this.lbl6.Size = new System.Drawing.Size(83, 17);
+            this.lbl6.TabIndex = 0;
+            this.lbl6.Text = "Tên độc giả";
+            this.lbl6.Click += new System.EventHandler(this.lbl6_Click);
             // 
             // label1
             // 
@@ -329,6 +366,17 @@ namespace LibraryInformationSystem.View
             this.txtReaderID.Size = new System.Drawing.Size(81, 31);
             this.txtReaderID.TabIndex = 1;
             // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.Location = new System.Drawing.Point(293, 122);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(90, 22);
+            this.lblStatus.TabIndex = 0;
+            this.lblStatus.Text = "Tình trạng";
+            this.lblStatus.Click += new System.EventHandler(this.label8_Click);
+            // 
             // txtBookIDCir
             // 
             this.txtBookIDCir.Location = new System.Drawing.Point(147, 69);
@@ -355,17 +403,6 @@ namespace LibraryInformationSystem.View
             this.label10.TabIndex = 0;
             this.label10.Text = "Ghi chú";
             this.label10.Click += new System.EventHandler(this.label8_Click);
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatus.Location = new System.Drawing.Point(293, 122);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(90, 22);
-            this.lblStatus.TabIndex = 0;
-            this.lblStatus.Text = "Tình trạng";
-            this.lblStatus.Click += new System.EventHandler(this.label8_Click);
             // 
             // lblCardID
             // 
@@ -422,6 +459,7 @@ namespace LibraryInformationSystem.View
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Maroon;
             this.label4.Location = new System.Drawing.Point(25, 122);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(99, 22);
@@ -482,77 +520,6 @@ namespace LibraryInformationSystem.View
             this.grdCirculation.TabIndex = 4;
             this.grdCirculation.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCirculation_CellClick);
             this.grdCirculation.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCirculation_CellContentClick);
-            // 
-            // libraryMngDataSet
-            // 
-            this.libraryMngDataSet.DataSetName = "LibraryMngDataSet";
-            this.libraryMngDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // circulationsBindingSource
-            // 
-            this.circulationsBindingSource.DataMember = "Circulations";
-            this.circulationsBindingSource.DataSource = this.libraryMngDataSet;
-            // 
-            // circulationsTableAdapter
-            // 
-            this.circulationsTableAdapter.ClearBeforeFill = true;
-            // 
-            // extendGroup
-            // 
-            this.extendGroup.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.extendGroup.Controls.Add(this.btnConfirmExtend);
-            this.extendGroup.Controls.Add(this.grpTimeExtend);
-            this.extendGroup.Location = new System.Drawing.Point(386, 245);
-            this.extendGroup.Name = "extendGroup";
-            this.extendGroup.Size = new System.Drawing.Size(354, 207);
-            this.extendGroup.TabIndex = 5;
-            this.extendGroup.TabStop = false;
-            this.extendGroup.Text = "Xác nhận gia hạn";
-            this.extendGroup.Visible = false;
-            this.extendGroup.Enter += new System.EventHandler(this.extendGroup_Enter);
-            // 
-            // btnConfirmExtend
-            // 
-            this.btnConfirmExtend.Location = new System.Drawing.Point(124, 170);
-            this.btnConfirmExtend.Name = "btnConfirmExtend";
-            this.btnConfirmExtend.Size = new System.Drawing.Size(96, 31);
-            this.btnConfirmExtend.TabIndex = 1;
-            this.btnConfirmExtend.Text = "Xác nhận";
-            this.btnConfirmExtend.UseVisualStyleBackColor = true;
-            this.btnConfirmExtend.Click += new System.EventHandler(this.btnConfirmExtend_Click);
-            // 
-            // grpTimeExtend
-            // 
-            this.grpTimeExtend.Controls.Add(this.rb2Week);
-            this.grpTimeExtend.Controls.Add(this.rb1Week);
-            this.grpTimeExtend.Location = new System.Drawing.Point(104, 71);
-            this.grpTimeExtend.Name = "grpTimeExtend";
-            this.grpTimeExtend.Size = new System.Drawing.Size(200, 100);
-            this.grpTimeExtend.TabIndex = 0;
-            this.grpTimeExtend.TabStop = false;
-            this.grpTimeExtend.Text = "Thời hạn";
-            // 
-            // rb2Week
-            // 
-            this.rb2Week.AutoSize = true;
-            this.rb2Week.Location = new System.Drawing.Point(7, 71);
-            this.rb2Week.Name = "rb2Week";
-            this.rb2Week.Size = new System.Drawing.Size(69, 21);
-            this.rb2Week.TabIndex = 1;
-            this.rb2Week.TabStop = true;
-            this.rb2Week.Text = "2 tuần";
-            this.rb2Week.UseVisualStyleBackColor = true;
-            // 
-            // rb1Week
-            // 
-            this.rb1Week.AutoSize = true;
-            this.rb1Week.Location = new System.Drawing.Point(7, 34);
-            this.rb1Week.Name = "rb1Week";
-            this.rb1Week.Size = new System.Drawing.Size(69, 21);
-            this.rb1Week.TabIndex = 0;
-            this.rb1Week.TabStop = true;
-            this.rb1Week.Text = "1 tuần";
-            this.rb1Week.UseVisualStyleBackColor = true;
             // 
             // CardID
             // 
@@ -618,48 +585,82 @@ namespace LibraryInformationSystem.View
             this.Note.Name = "Note";
             this.Note.Width = 125;
             // 
-            // lbl6
+            // libraryMngDataSet
             // 
-            this.lbl6.AutoSize = true;
-            this.lbl6.Location = new System.Drawing.Point(5, 119);
-            this.lbl6.Name = "lbl6";
-            this.lbl6.Size = new System.Drawing.Size(83, 17);
-            this.lbl6.TabIndex = 0;
-            this.lbl6.Text = "Tên độc giả";
-            this.lbl6.Click += new System.EventHandler(this.lbl6_Click);
+            this.libraryMngDataSet.DataSetName = "LibraryMngDataSet";
+            this.libraryMngDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // label7
+            // circulationsBindingSource
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(4, 166);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(59, 17);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Chức vụ";
+            this.circulationsBindingSource.DataMember = "Circulations";
+            this.circulationsBindingSource.DataSource = this.libraryMngDataSet;
             // 
-            // txtReaderName
+            // circulationsTableAdapter
             // 
-            this.txtReaderName.Location = new System.Drawing.Point(123, 118);
-            this.txtReaderName.Multiline = true;
-            this.txtReaderName.Name = "txtReaderName";
-            this.txtReaderName.Size = new System.Drawing.Size(100, 22);
-            this.txtReaderName.TabIndex = 1;
-            this.txtReaderName.TextChanged += new System.EventHandler(this.txtBookID_TextChanged);
+            this.circulationsTableAdapter.ClearBeforeFill = true;
             // 
-            // txtReaderJob
+            // extendGroup
             // 
-            this.txtReaderJob.Location = new System.Drawing.Point(123, 166);
-            this.txtReaderJob.Multiline = true;
-            this.txtReaderJob.Name = "txtReaderJob";
-            this.txtReaderJob.Size = new System.Drawing.Size(100, 22);
-            this.txtReaderJob.TabIndex = 3;
+            this.extendGroup.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.extendGroup.Controls.Add(this.btnConfirmExtend);
+            this.extendGroup.Controls.Add(this.grpTimeExtend);
+            this.extendGroup.Location = new System.Drawing.Point(37, 41);
+            this.extendGroup.Name = "extendGroup";
+            this.extendGroup.Size = new System.Drawing.Size(354, 207);
+            this.extendGroup.TabIndex = 5;
+            this.extendGroup.TabStop = false;
+            this.extendGroup.Text = "Xác nhận gia hạn";
+            this.extendGroup.Visible = false;
+            this.extendGroup.Enter += new System.EventHandler(this.extendGroup_Enter);
+            // 
+            // btnConfirmExtend
+            // 
+            this.btnConfirmExtend.Location = new System.Drawing.Point(124, 170);
+            this.btnConfirmExtend.Name = "btnConfirmExtend";
+            this.btnConfirmExtend.Size = new System.Drawing.Size(96, 31);
+            this.btnConfirmExtend.TabIndex = 1;
+            this.btnConfirmExtend.Text = "Xác nhận";
+            this.btnConfirmExtend.UseVisualStyleBackColor = true;
+            this.btnConfirmExtend.Click += new System.EventHandler(this.btnConfirmExtend_Click);
+            // 
+            // grpTimeExtend
+            // 
+            this.grpTimeExtend.Controls.Add(this.rb2Week);
+            this.grpTimeExtend.Controls.Add(this.rb1Week);
+            this.grpTimeExtend.Location = new System.Drawing.Point(104, 71);
+            this.grpTimeExtend.Name = "grpTimeExtend";
+            this.grpTimeExtend.Size = new System.Drawing.Size(200, 100);
+            this.grpTimeExtend.TabIndex = 0;
+            this.grpTimeExtend.TabStop = false;
+            this.grpTimeExtend.Text = "Thời hạn";
+            // 
+            // rb2Week
+            // 
+            this.rb2Week.AutoSize = true;
+            this.rb2Week.Location = new System.Drawing.Point(7, 71);
+            this.rb2Week.Name = "rb2Week";
+            this.rb2Week.Size = new System.Drawing.Size(69, 21);
+            this.rb2Week.TabIndex = 1;
+            this.rb2Week.TabStop = true;
+            this.rb2Week.Text = "2 tuần";
+            this.rb2Week.UseVisualStyleBackColor = true;
+            // 
+            // rb1Week
+            // 
+            this.rb1Week.AutoSize = true;
+            this.rb1Week.Location = new System.Drawing.Point(7, 34);
+            this.rb1Week.Name = "rb1Week";
+            this.rb1Week.Size = new System.Drawing.Size(69, 21);
+            this.rb1Week.TabIndex = 0;
+            this.rb1Week.TabStop = true;
+            this.rb1Week.Text = "1 tuần";
+            this.rb1Week.UseVisualStyleBackColor = true;
             // 
             // ucFrmCirculation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.extendGroup);
             this.Controls.Add(this.grdCirculation);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnExtend);
