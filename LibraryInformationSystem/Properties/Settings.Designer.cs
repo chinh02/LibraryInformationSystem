@@ -32,5 +32,15 @@ namespace LibraryInformationSystem.Properties {
                 return ((string)(this["QLTVConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MSI;Initial Catalog=LibraryMng;Integrated Security=True")]
+        public string LibraryMngConnectionString {
+            get {
+                return ((string)(this["LibraryMngConnectionString"]));
+            }
+        }
     }
 }

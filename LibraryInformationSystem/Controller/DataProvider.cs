@@ -21,7 +21,7 @@ namespace LibraryInformationSystem.Controller
             adapter.Fill(dataTable);
             return dataTable;
         }
-        public void Excute(string sql)
+        public void Execute(string sql)
         {
             connection.Open();
             SqlCommand command = new SqlCommand(sql, connection);

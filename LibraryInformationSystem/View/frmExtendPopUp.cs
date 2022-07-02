@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace LibraryInformationSystem.View
 {
-    public partial class ucFrmReaderRegister : UserControl
+    public partial class frmExtendPopUp : Form
     {
-        public ucFrmReaderRegister()
+        public frmExtendPopUp()
         {
             InitializeComponent();
         }
 
-        private void btnSignUpUser_Click(object sender, EventArgs e)
+        private void frmExtendPopUp_Load(object sender, EventArgs e)
         {
 
         }
