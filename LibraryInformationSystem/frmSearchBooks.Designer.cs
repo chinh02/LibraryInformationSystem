@@ -29,9 +29,9 @@ namespace LibraryInformationSystem
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.comFields = new System.Windows.Forms.ComboBox();
+            this.comFieldValue = new System.Windows.Forms.TextBox();
+            this.searchBtn = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -39,41 +39,41 @@ namespace LibraryInformationSystem
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // comFields
             // 
-            this.comboBox1.AccessibleDescription = "";
-            this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comFields.AccessibleDescription = "";
+            this.comFields.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comFields.FormattingEnabled = true;
+            this.comFields.Items.AddRange(new object[] {
             "Nhan đề",
             "Tác giả",
             "Thể loại"});
-            this.comboBox1.Location = new System.Drawing.Point(93, 129);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(86, 23);
-            this.comboBox1.TabIndex = 4;
-            this.comboBox1.Text = "Tìm kiếm";
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comFields.Location = new System.Drawing.Point(93, 129);
+            this.comFields.Name = "comFields";
+            this.comFields.Size = new System.Drawing.Size(86, 23);
+            this.comFields.TabIndex = 4;
+            this.comFields.Text = "Tìm kiếm";
+            this.comFields.SelectedIndexChanged += new System.EventHandler(this.comFields_SelectedIndexChanged);
             // 
-            // textBox1
+            // comFieldValue
             // 
-            this.textBox1.Location = new System.Drawing.Point(238, 129);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(350, 22);
-            this.textBox1.TabIndex = 6;
+            this.comFieldValue.Location = new System.Drawing.Point(238, 129);
+            this.comFieldValue.Name = "comFieldValue";
+            this.comFieldValue.Size = new System.Drawing.Size(350, 22);
+            this.comFieldValue.TabIndex = 6;
             // 
-            // button1
+            // searchBtn
             // 
-            this.button1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(656, 121);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 37);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Tìm kiếm";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.searchBtn.BackColor = System.Drawing.Color.RoyalBlue;
+            this.searchBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchBtn.ForeColor = System.Drawing.Color.White;
+            this.searchBtn.Location = new System.Drawing.Point(656, 121);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(117, 37);
+            this.searchBtn.TabIndex = 7;
+            this.searchBtn.Text = "Tìm kiếm";
+            this.searchBtn.UseVisualStyleBackColor = false;
+            this.searchBtn.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridView1
             // 
@@ -126,9 +126,9 @@ namespace LibraryInformationSystem
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.searchBtn);
+            this.Controls.Add(this.comFieldValue);
+            this.Controls.Add(this.comFields);
             this.Name = "frmSearchBooks";
             this.Text = "frmSearchBooks";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -138,9 +138,9 @@ namespace LibraryInformationSystem
         }
 
         #endregion
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox comFields;
+        private System.Windows.Forms.TextBox comFieldValue;
+        private System.Windows.Forms.Button searchBtn;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;

@@ -29,7 +29,7 @@ namespace LibraryInformationSystem.View
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.grdViewBook = new System.Windows.Forms.DataGridView();
             this.BookID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,14 +82,14 @@ namespace LibraryInformationSystem.View
             this.Author,
             this.Genre,
             this.Publisher});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdViewBook.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdViewBook.DefaultCellStyle = dataGridViewCellStyle2;
             this.grdViewBook.Location = new System.Drawing.Point(44, 243);
             this.grdViewBook.Name = "grdViewBook";
             this.grdViewBook.RowHeadersWidth = 51;
@@ -301,16 +301,16 @@ namespace LibraryInformationSystem.View
             this.comFieldsValueBook.FormattingEnabled = true;
             this.comFieldsValueBook.Location = new System.Drawing.Point(209, 55);
             this.comFieldsValueBook.Name = "comFieldsValueBook";
-            this.comFieldsValueBook.Size = new System.Drawing.Size(115, 24);
+            this.comFieldsValueBook.Size = new System.Drawing.Size(216, 24);
             this.comFieldsValueBook.TabIndex = 3;
             // 
             // comFieldsBook
             // 
             this.comFieldsBook.FormattingEnabled = true;
             this.comFieldsBook.Items.AddRange(new object[] {
-            "Author",
-            "Genre",
-            "Publisher"});
+            "Tác giả",
+            "Thể loại",
+            "Nhà xuất bản"});
             this.comFieldsBook.Location = new System.Drawing.Point(26, 55);
             this.comFieldsBook.Name = "comFieldsBook";
             this.comFieldsBook.Size = new System.Drawing.Size(121, 24);

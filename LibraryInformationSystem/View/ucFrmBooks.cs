@@ -32,21 +32,45 @@ namespace LibraryInformationSystem.View
         }
 
         private void comFieldsBook_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            sql = "Select Distinct " + comFieldsBook.Text + " FROM LibMngm.Books";
+        {   if (comFieldsBook.Text == "Tác giả") {
+            sql = "Select Distinct AuthorName FROM LibMngm.Authors";
             comFieldsValueBook.DataSource = DataProvider.GetData(sql);
-            comFieldsValueBook.DisplayMember = comFieldsBook.Text;
+            comFieldsValueBook.DisplayMember = "AuthorName";
+            } else if (comFieldsBook.Text == "Thể loại")
+            {
+                sql = "Select Distinct Genre FROM LibMngm.Books";
+                comFieldsValueBook.DataSource = DataProvider.GetData(sql);
+                comFieldsValueBook.DisplayMember = "Genre";
+            } else if(comFieldsBook.Text == "Nhà xuất bản")
+            {
+                sql = "Select Distinct Publisher FROM LibMngm.Books";
+                comFieldsValueBook.DataSource = DataProvider.GetData(sql);
+                comFieldsValueBook.DisplayMember = "Publisher";
+            }
 
-            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            sql = "SELECT BookID, Title, Author, Genre, Publisher FROM LibMngm.Books"
-    + " WHERE " + comFieldsBook.Text + " = N'" + comFieldsValueBook.Text + "'";
-            grdViewBook.DataSource = DataProvider.GetData(sql);
-            loadDetails();
-        }
+                if (comFieldsBook.Text == "Tác giả")
+                {
+                sql = "SELECT * FROM LibMngm.Books WHERE Author Like N'%" + comFieldsValueBook.Text + "%'";
+                grdViewBook.DataSource = DataProvider.GetData(sql);
+                loadDetails();
+            }
+                else if (comFieldsBook.Text == "Thể loại")
+                {
+                sql = "SELECT * FROM LibMngm.Books WHERE Genre Like N'%" + comFieldsValueBook.Text + "%'";
+                grdViewBook.DataSource = DataProvider.GetData(sql);
+                loadDetails();
+            }
+                else if (comFieldsBook.Text == "Nhà xuất bản")
+                {
+                sql = "SELECT * FROM LibMngm.Books WHERE Publisher Like N'%" + comFieldsValueBook.Text + "%'";
+                grdViewBook.DataSource = DataProvider.GetData(sql);
+                loadDetails();
+            }
+            }
 
         private void loadDetails()
         {
