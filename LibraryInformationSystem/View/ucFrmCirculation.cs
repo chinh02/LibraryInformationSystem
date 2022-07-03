@@ -14,6 +14,8 @@ namespace LibraryInformationSystem.View
     public partial class ucFrmCirculation : UserControl
     {
         int i;
+        Controller.CirculationController controller = new Controller.CirculationController();
+
         public ucFrmCirculation()
         {
             InitializeComponent();
@@ -36,7 +38,6 @@ namespace LibraryInformationSystem.View
 
         private void ucFrmCirculation_Load(object sender, EventArgs e)
         {
-            Controller.CirculationController controller = new Controller.CirculationController();
             grdCirculation.DataSource= controller.LoadCard();
             
         }
@@ -56,7 +57,48 @@ namespace LibraryInformationSystem.View
             txtActualReturn.Text = grdCirculation.Rows[i].Cells["ActualReturn"].Value.ToString();
             txtNote.Text = grdCirculation.Rows[i].Cells["Note"].Value.ToString();
             txtReaderID.Text = grdCirculation.Rows[i].Cells["ReaderID"].Value.ToString();
-            
+
+            string conString = "Data Source=MSI;Initial Catalog=LibraryMng;Integrated Security=True";
+            SqlConnection con = new SqlConnection(conString);
+
+            string selectSql = "select * from LibMngm.Readers Where ReaderID ='" + txtReaderID.Text + "'";
+            string selectSql1 = "select * from LibMngm.Books Where BookID ='" + txtBookIDCir.Text + "'";
+            SqlCommand cmd = new SqlCommand(selectSql, con);
+            SqlCommand cmd1 = new SqlCommand(selectSql1, con);
+            try
+            {
+                con.Open();
+
+                using (SqlDataReader read = cmd.ExecuteReader())
+                {
+                    while (read.Read())
+                    {
+                        txtReaderName.Text = (read["ReaderName"].ToString());
+                        txtReaderJob.Text = (read["ReaderJob"].ToString());
+                    }
+                }
+            }
+            finally
+            {
+                con.Close();
+            }
+            try
+            {
+                con.Open();
+
+                using (SqlDataReader reader = cmd1.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        txtBookAuthor.Text = (reader["Author"].ToString());
+                        txtBookName.Text = (reader["Title"].ToString());
+                    }
+                }
+            }
+            finally
+            {
+                con.Close();
+            }
 
         }
 
@@ -117,8 +159,13 @@ namespace LibraryInformationSystem.View
             txtCardID.Visible = true;
             lblSupposedReturn.Visible = true;
             txtSupposedReturn.Visible = true;
+            txtBorrowedDate.Visible = true;
+            lblBorrowedDate.Visible = true;
             txtActualReturn.Visible = true;
-            lblActualReturn.Visible = true; 
+            lblActualReturn.Visible = true;
+            txtStatus.Visible = true;
+            lblStatus.Visible = true;
+
             txtReaderID.ResetText();
             txtCardID.ResetText();
             txtBorrowedDate.ResetText();
@@ -127,6 +174,7 @@ namespace LibraryInformationSystem.View
             txtBorrowedDate.ResetText();
             txtStatus.ResetText();
             txtSupposedReturn.ResetText();
+            txtNote.ResetText();
 
         }
 
@@ -150,13 +198,17 @@ namespace LibraryInformationSystem.View
                 circulation.Extend1Week(txtCardID.Text);
                 MessageBox.Show("Đã gia hạn mượn sách thêm 1 tuần");
                 extendGroup.Visible = false;
+                ucFrmCirculation_Load(sender, e);
+                ResetGridView();
 
             }
             else if (rb2Week.Checked == true)
             {
                 circulation.Extend2Week(txtCardID.Text);
-                MessageBox.Show("Đã gia hạn mượn sách thêm 1 tuần");
+                MessageBox.Show("Đã gia hạn mượn sách thêm 2 tuần");
                 extendGroup.Visible = false;
+                ucFrmCirculation_Load(sender, e);
+                ResetGridView();
 
             }
         }
@@ -166,6 +218,8 @@ namespace LibraryInformationSystem.View
             Controller.CirculationController circulation = new Controller.CirculationController();
             circulation.ReturnCard(txtCardID.Text);
             MessageBox.Show("Trả sách thành công");
+            ucFrmCirculation_Load(sender, e);
+            ResetGridView();
         }
 
         private void label9_Click(object sender, EventArgs e)
@@ -180,93 +234,11 @@ namespace LibraryInformationSystem.View
             if (rbReader.Checked == true)
             {
                 grdCirculation.DataSource = circulation.SearchByReader(txtSearch.Text);
-                loadDetails();
-                string conString = "Data Source=MSI;Initial Catalog=LibraryMng;Integrated Security=True";
-                SqlConnection con = new SqlConnection(conString);
-
-                string selectSql = "select * from LibMngm.Readers Where ReaderID ='"+txtSearch.Text+"'";
-                string selectSql1 = "select * from LibMngm.Books Where BookID ='"+txtBookIDCir.Text+"'";
-                SqlCommand cmd = new SqlCommand(selectSql, con);
-                SqlCommand cmd1 = new SqlCommand(selectSql1, con);
-                try
-                {
-                    con.Open();
-
-                    using (SqlDataReader read = cmd.ExecuteReader())
-                    {
-                        while (read.Read())
-                        {
-                            txtReaderName.Text = (read["ReaderName"].ToString());
-                            txtReaderJob.Text = (read["ReaderJob"].ToString());
-                        }
-                    }
-                }
-                finally
-                {
-                    con.Close();
-                }
-                try
-                {
-                    con.Open();
-
-                    using (SqlDataReader reader = cmd1.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            txtBookAuthor.Text = (reader["Author"].ToString());
-                            txtBookName.Text = (reader["Title"].ToString());
-                        }
-                    }
-                }
-                finally
-                {
-                    con.Close();
-                }
+                loadDetails();                
             } else if (rbBook.Checked == true)
             {
                 grdCirculation.DataSource = circulation.SearchByBook(txtSearch.Text);
-                loadDetails();
-                string conString = "Data Source=MSI;Initial Catalog=LibraryMng;Integrated Security=True";
-                SqlConnection con = new SqlConnection(conString);
-
-                string selectSql = "select * from LibMngm.Readers Where ReaderID ='" + txtReaderID.Text + "'";
-                string selectSql1 = "select * from LibMngm.Books Where BookID ='" + txtSearch.Text + "'";
-                SqlCommand cmd = new SqlCommand(selectSql, con);
-                SqlCommand cmd1 = new SqlCommand(selectSql1, con);
-                try
-                {
-                    con.Open();
-
-                    using (SqlDataReader read = cmd.ExecuteReader())
-                    {
-                        while (read.Read())
-                        {
-                            txtReaderName.Text = (read["ReaderName"].ToString());
-                            txtReaderJob.Text = (read["ReaderJob"].ToString());
-                        }
-                    }
-                }
-                finally
-                {
-                    con.Close();
-                }
-                try
-                {
-                    con.Open();
-
-                    using (SqlDataReader reader = cmd1.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            txtBookAuthor.Text = (reader["Author"].ToString());
-                            txtBookName.Text = (reader["Title"].ToString());
-                        }
-                    }
-                }
-                finally
-                {
-                    con.Close();
-                }
+                loadDetails();                
             }
         }
 
@@ -278,6 +250,14 @@ namespace LibraryInformationSystem.View
         private void lbl6_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnReportCir_Click(object sender, EventArgs e)
+        {
+            rptDanhSachNguoiMuon rpt = new rptDanhSachNguoiMuon();
+            rpt.SetDataSource(controller.LoadBorrowed());
+            ReportForm.frmRptCirculation frm = new ReportForm.frmRptCirculation(rpt);
+            frm.Show();
         }
     }
 }

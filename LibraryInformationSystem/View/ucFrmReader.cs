@@ -13,6 +13,9 @@ namespace LibraryInformationSystem.View
     public partial class ucFrmReader : UserControl
     {
         public bool AddNewFlag, UpdateFlag, DeleteFlag;
+        Controller.ReaderController readerController = new Controller.ReaderController();
+
+
         public ucFrmReader()
         {
             InitializeComponent();
@@ -25,7 +28,6 @@ namespace LibraryInformationSystem.View
 
         private void ucFrmReader_Load(object sender, EventArgs e)
         {
-            Controller.ReaderController readerController = new Controller.ReaderController();
             
             readerGridView.DataSource = readerController.LoadReader();
             AddNewFlag = false;
@@ -53,6 +55,7 @@ namespace LibraryInformationSystem.View
 
         private void button3_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Bạn có chắc muốn xóa dữ liệu ở ô này không ? Ấn cập nhật để xóa");
             AddNewFlag = false;
             btnFunction.Visible = true;
             DeleteFlag = true;
@@ -62,10 +65,18 @@ namespace LibraryInformationSystem.View
 
         private void button1_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Nhập thông tin và ấn cập nhật để thêm mới dữ liệu");
+            int i = readerGridView.RowCount;
+            readerGridView.CurrentCell = readerGridView[0, i - 1];
+            txtReaderName.Focus();
             AddNewFlag = true;
             btnFunction.Visible = true;
+            txtIDReader.Visible = false;
+            labelReaderID.Visible = false;
             DeleteFlag = false;
             UpdateFlag = false;
+            lblValidDate.Visible = false;
+            txtValidDate.Visible = false;
 
             
         }
@@ -77,6 +88,7 @@ namespace LibraryInformationSystem.View
 
         private void button2_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Chọn ô muốn sửa, nhập thông tin và ấn cập nhật để sửa dữ liệu");
             AddNewFlag = false;
             btnFunction.Visible = true;
             DeleteFlag = false;
@@ -155,7 +167,28 @@ namespace LibraryInformationSystem.View
             }
         }
 
-        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReportCard_Click(object sender, EventArgs e)
+        {
+            rptPhieuThongTinDocGia rpt = new rptPhieuThongTinDocGia();
+            rpt.SetDataSource(readerController.ExportReaderCard(txtIDReader.Text));
+            ReportForm.frmRprReaderCard frm = new ReportForm.frmRprReaderCard(rpt);
+            frm.Show();
+        }
+
+        private void btnReportReader_Click(object sender, EventArgs e)
+        {
+            rptReaderList rpt = new rptReaderList();
+            rpt.SetDataSource(readerController.LoadReader());
+            ReportForm.frmRptReaderList frm = new ReportForm.frmRptReaderList(rpt);
+            frm.Show();
+        }
+
+        private void lblValidDate_Click(object sender, EventArgs e)
         {
 
         }
@@ -165,10 +198,9 @@ namespace LibraryInformationSystem.View
             if (AddNewFlag == true)
             {
                 Model.Reader reader = new Model.Reader();
-                reader.readerDOB = txtReaderDOB.Text;
+                reader.readerDOB = DateTime.ParseExact(txtReaderDOB.Text, "MM/dd/yyyy", null).ToString();
                 reader.readerJob = txtReaderJob.Text;
                 reader.readerName = txtReaderName.Text;
-                reader.validDate = txtValidDate.Text;
                 reader.readerGender = txtReaderGender.Text;
                 Controller.ReaderController readerController = new Controller.ReaderController();
                 readerController.AddReader(reader);
@@ -178,15 +210,14 @@ namespace LibraryInformationSystem.View
             {
                 Model.Reader reader = new Model.Reader();
                 reader.readerID = txtIDReader.Text;
-                reader.readerDOB = txtReaderDOB.Text;
+                reader.readerDOB = DateTime.ParseExact(txtReaderDOB.Text, "MM/dd/yyyy", null).ToString();
                 reader.readerJob = txtReaderJob.Text;
                 reader.readerName = txtReaderName.Text;
-                reader.validDate = txtValidDate.Text;
                 reader.readerGender = txtReaderGender.Text;
                 Controller.ReaderController readerController = new Controller.ReaderController();
                 readerController.UpdateReader(reader);
-                ucFrmReader_Load(sender, e);
                 ResetGridView();
+                ucFrmReader_Load(sender, e);
             } else if(DeleteFlag == true)
             {
                 if (txtIDReader != null)
@@ -201,6 +232,11 @@ namespace LibraryInformationSystem.View
 
         private void ResetGridView()
         {
+            lblValidDate.Visible = true;
+            labelReaderID.Visible = true;
+            txtIDReader.Visible = true;
+            lblValidDate.Visible = true;
+            btnFunction.Visible = false;
             txtIDReader.Clear();
             txtReaderDOB.Clear();
             txtReaderGender.Clear();

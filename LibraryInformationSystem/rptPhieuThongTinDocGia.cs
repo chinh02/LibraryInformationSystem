@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LibraryInformationSystem.Report {
+namespace LibraryInformationSystem {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace LibraryInformationSystem.Report {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rptMuonTraSach : ReportClass {
+    public class rptPhieuThongTinDocGia : ReportClass {
         
-        public rptMuonTraSach() {
+        public rptPhieuThongTinDocGia() {
         }
         
         public override string ResourceName {
             get {
-                return "rptMuonTraSach.rpt";
+                return "rptPhieuThongTinDocGia.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace LibraryInformationSystem.Report {
         
         public override string FullResourceName {
             get {
-                return "LibraryInformationSystem.Report.rptMuonTraSach.rpt";
+                return "LibraryInformationSystem.rptPhieuThongTinDocGia.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace LibraryInformationSystem.Report {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedrptMuonTraSach : Component, ICachedReport {
+    public class CachedrptPhieuThongTinDocGia : Component, ICachedReport {
         
-        public CachedrptMuonTraSach() {
+        public CachedrptPhieuThongTinDocGia() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace LibraryInformationSystem.Report {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rptMuonTraSach rpt = new rptMuonTraSach();
+            rptPhieuThongTinDocGia rpt = new rptPhieuThongTinDocGia();
             rpt.Site = this.Site;
             return rpt;
         }

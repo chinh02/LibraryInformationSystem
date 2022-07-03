@@ -29,7 +29,6 @@ namespace LibraryInformationSystem.View
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucFrmReader));
             this.readerGridView = new System.Windows.Forms.DataGridView();
             this.ReaderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ReaderName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,14 +48,6 @@ namespace LibraryInformationSystem.View
             this.btnAddReader = new System.Windows.Forms.Button();
             this.buttonUpdateReader = new System.Windows.Forms.Button();
             this.btnDeleteReader = new System.Windows.Forms.Button();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.label7 = new System.Windows.Forms.Label();
             this.comFields = new System.Windows.Forms.ComboBox();
             this.comFieldsValue = new System.Windows.Forms.TextBox();
@@ -66,8 +57,9 @@ namespace LibraryInformationSystem.View
             this.txtReaderDOB = new System.Windows.Forms.TextBox();
             this.txtValidDate = new System.Windows.Forms.TextBox();
             this.btnFunction = new System.Windows.Forms.Button();
+            this.btnReportReader = new System.Windows.Forms.Button();
+            this.btnReportCard = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.readerGridView)).BeginInit();
-            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // readerGridView
@@ -82,11 +74,11 @@ namespace LibraryInformationSystem.View
             this.ReaderJob,
             this.ValidDate,
             this.ExpiredDate});
-            this.readerGridView.Location = new System.Drawing.Point(56, 256);
+            this.readerGridView.Location = new System.Drawing.Point(64, 256);
             this.readerGridView.Name = "readerGridView";
             this.readerGridView.RowHeadersWidth = 51;
             this.readerGridView.RowTemplate.Height = 24;
-            this.readerGridView.Size = new System.Drawing.Size(740, 375);
+            this.readerGridView.Size = new System.Drawing.Size(784, 426);
             this.readerGridView.TabIndex = 0;
             this.readerGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.readerGridView_CellClick);
             this.readerGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -159,7 +151,7 @@ namespace LibraryInformationSystem.View
             this.labelReaderID.AutoSize = true;
             this.labelReaderID.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelReaderID.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.labelReaderID.Location = new System.Drawing.Point(860, 271);
+            this.labelReaderID.Location = new System.Drawing.Point(887, 263);
             this.labelReaderID.Name = "labelReaderID";
             this.labelReaderID.Size = new System.Drawing.Size(93, 22);
             this.labelReaderID.TabIndex = 1;
@@ -171,7 +163,7 @@ namespace LibraryInformationSystem.View
             this.labelReaderName.AutoSize = true;
             this.labelReaderName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelReaderName.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.labelReaderName.Location = new System.Drawing.Point(860, 318);
+            this.labelReaderName.Location = new System.Drawing.Point(887, 310);
             this.labelReaderName.Name = "labelReaderName";
             this.labelReaderName.Size = new System.Drawing.Size(86, 22);
             this.labelReaderName.TabIndex = 1;
@@ -183,7 +175,7 @@ namespace LibraryInformationSystem.View
             this.lblDOB.AutoSize = true;
             this.lblDOB.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDOB.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblDOB.Location = new System.Drawing.Point(860, 412);
+            this.lblDOB.Location = new System.Drawing.Point(887, 404);
             this.lblDOB.Name = "lblDOB";
             this.lblDOB.Size = new System.Drawing.Size(171, 22);
             this.lblDOB.TabIndex = 1;
@@ -195,11 +187,12 @@ namespace LibraryInformationSystem.View
             this.lblValidDate.AutoSize = true;
             this.lblValidDate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblValidDate.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblValidDate.Location = new System.Drawing.Point(860, 506);
+            this.lblValidDate.Location = new System.Drawing.Point(887, 498);
             this.lblValidDate.Name = "lblValidDate";
             this.lblValidDate.Size = new System.Drawing.Size(145, 22);
             this.lblValidDate.TabIndex = 1;
             this.lblValidDate.Text = "Ngày đăng ký thẻ";
+            this.lblValidDate.Click += new System.EventHandler(this.lblValidDate_Click);
             // 
             // lblJob
             // 
@@ -208,7 +201,7 @@ namespace LibraryInformationSystem.View
             this.lblJob.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblJob.ForeColor = System.Drawing.Color.RoyalBlue;
             this.lblJob.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblJob.Location = new System.Drawing.Point(860, 459);
+            this.lblJob.Location = new System.Drawing.Point(887, 451);
             this.lblJob.Name = "lblJob";
             this.lblJob.Size = new System.Drawing.Size(108, 22);
             this.lblJob.TabIndex = 1;
@@ -217,39 +210,42 @@ namespace LibraryInformationSystem.View
             // txtIDReader
             // 
             this.txtIDReader.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtIDReader.Location = new System.Drawing.Point(1058, 271);
+            this.txtIDReader.Location = new System.Drawing.Point(1085, 263);
             this.txtIDReader.Multiline = true;
             this.txtIDReader.Name = "txtIDReader";
             this.txtIDReader.Size = new System.Drawing.Size(100, 22);
             this.txtIDReader.TabIndex = 7;
+            this.txtIDReader.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtReaderName
             // 
             this.txtReaderName.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtReaderName.Location = new System.Drawing.Point(1058, 318);
+            this.txtReaderName.Location = new System.Drawing.Point(1085, 310);
             this.txtReaderName.Multiline = true;
             this.txtReaderName.Name = "txtReaderName";
             this.txtReaderName.Size = new System.Drawing.Size(100, 22);
             this.txtReaderName.TabIndex = 8;
+            this.txtReaderName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtReaderJob
             // 
             this.txtReaderJob.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtReaderJob.Location = new System.Drawing.Point(1058, 459);
+            this.txtReaderJob.Location = new System.Drawing.Point(1085, 451);
             this.txtReaderJob.Multiline = true;
             this.txtReaderJob.Name = "txtReaderJob";
             this.txtReaderJob.Size = new System.Drawing.Size(100, 22);
             this.txtReaderJob.TabIndex = 12;
+            this.txtReaderJob.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnAddReader
             // 
             this.btnAddReader.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnAddReader.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnAddReader.BackColor = System.Drawing.Color.DarkBlue;
             this.btnAddReader.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddReader.ForeColor = System.Drawing.Color.White;
-            this.btnAddReader.Location = new System.Drawing.Point(848, 217);
+            this.btnAddReader.Location = new System.Drawing.Point(856, 205);
             this.btnAddReader.Name = "btnAddReader";
-            this.btnAddReader.Size = new System.Drawing.Size(75, 29);
+            this.btnAddReader.Size = new System.Drawing.Size(75, 41);
             this.btnAddReader.TabIndex = 4;
             this.btnAddReader.Text = "Thêm";
             this.btnAddReader.UseVisualStyleBackColor = false;
@@ -258,12 +254,12 @@ namespace LibraryInformationSystem.View
             // buttonUpdateReader
             // 
             this.buttonUpdateReader.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.buttonUpdateReader.BackColor = System.Drawing.Color.RoyalBlue;
+            this.buttonUpdateReader.BackColor = System.Drawing.Color.DarkBlue;
             this.buttonUpdateReader.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonUpdateReader.ForeColor = System.Drawing.Color.White;
-            this.buttonUpdateReader.Location = new System.Drawing.Point(960, 217);
+            this.buttonUpdateReader.Location = new System.Drawing.Point(968, 205);
             this.buttonUpdateReader.Name = "buttonUpdateReader";
-            this.buttonUpdateReader.Size = new System.Drawing.Size(75, 29);
+            this.buttonUpdateReader.Size = new System.Drawing.Size(75, 41);
             this.buttonUpdateReader.TabIndex = 5;
             this.buttonUpdateReader.Text = "Sửa";
             this.buttonUpdateReader.UseVisualStyleBackColor = false;
@@ -272,95 +268,23 @@ namespace LibraryInformationSystem.View
             // btnDeleteReader
             // 
             this.btnDeleteReader.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnDeleteReader.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnDeleteReader.BackColor = System.Drawing.Color.DarkBlue;
             this.btnDeleteReader.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteReader.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteReader.Location = new System.Drawing.Point(1076, 217);
+            this.btnDeleteReader.Location = new System.Drawing.Point(1084, 205);
             this.btnDeleteReader.Name = "btnDeleteReader";
-            this.btnDeleteReader.Size = new System.Drawing.Size(75, 29);
+            this.btnDeleteReader.Size = new System.Drawing.Size(75, 41);
             this.btnDeleteReader.TabIndex = 6;
             this.btnDeleteReader.Text = "Xóa";
             this.btnDeleteReader.UseVisualStyleBackColor = false;
             this.btnDeleteReader.Click += new System.EventHandler(this.button3_Click);
             // 
-            // toolStrip1
-            // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripSeparator1,
-            this.toolStripButton2,
-            this.toolStripSeparator2,
-            this.toolStripButton3,
-            this.toolStripSeparator3,
-            this.toolStripButton4});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1187, 27);
-            this.toolStrip1.TabIndex = 5;
-            this.toolStrip1.Text = "toolStrip1";
-            this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(29, 24);
-            this.toolStripButton1.Text = "toolStripButton1";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(29, 24);
-            this.toolStripButton2.Text = "toolStripButton2";
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 27);
-            // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(29, 24);
-            this.toolStripButton3.Text = "toolStripButton3";
-            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 27);
-            // 
-            // toolStripButton4
-            // 
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton4.Image = global::LibraryInformationSystem.Properties.Resources.tải_xuống__2_;
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(29, 24);
-            this.toolStripButton4.Text = "toolStripButton4";
-            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
-            // 
             // label7
             // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label7.ForeColor = System.Drawing.Color.DarkBlue;
             this.label7.Location = new System.Drawing.Point(27, 71);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(330, 32);
@@ -374,7 +298,7 @@ namespace LibraryInformationSystem.View
             this.comFields.Items.AddRange(new object[] {
             "ID độc giả",
             "Họ và tên"});
-            this.comFields.Location = new System.Drawing.Point(98, 149);
+            this.comFields.Location = new System.Drawing.Point(106, 149);
             this.comFields.Name = "comFields";
             this.comFields.Size = new System.Drawing.Size(121, 24);
             this.comFields.TabIndex = 1;
@@ -383,7 +307,7 @@ namespace LibraryInformationSystem.View
             // comFieldsValue
             // 
             this.comFieldsValue.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.comFieldsValue.Location = new System.Drawing.Point(251, 149);
+            this.comFieldsValue.Location = new System.Drawing.Point(259, 149);
             this.comFieldsValue.Multiline = true;
             this.comFieldsValue.Name = "comFieldsValue";
             this.comFieldsValue.Size = new System.Drawing.Size(354, 24);
@@ -395,7 +319,7 @@ namespace LibraryInformationSystem.View
             this.btnSearchReader.BackColor = System.Drawing.Color.White;
             this.btnSearchReader.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchReader.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnSearchReader.Location = new System.Drawing.Point(641, 144);
+            this.btnSearchReader.Location = new System.Drawing.Point(649, 144);
             this.btnSearchReader.Name = "btnSearchReader";
             this.btnSearchReader.Size = new System.Drawing.Size(115, 29);
             this.btnSearchReader.TabIndex = 3;
@@ -409,7 +333,7 @@ namespace LibraryInformationSystem.View
             this.lblGender.AutoSize = true;
             this.lblGender.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGender.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblGender.Location = new System.Drawing.Point(860, 365);
+            this.lblGender.Location = new System.Drawing.Point(887, 357);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(81, 22);
             this.lblGender.TabIndex = 1;
@@ -418,16 +342,17 @@ namespace LibraryInformationSystem.View
             // txtReaderGender
             // 
             this.txtReaderGender.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtReaderGender.Location = new System.Drawing.Point(1058, 365);
+            this.txtReaderGender.Location = new System.Drawing.Point(1085, 357);
             this.txtReaderGender.Multiline = true;
             this.txtReaderGender.Name = "txtReaderGender";
             this.txtReaderGender.Size = new System.Drawing.Size(100, 22);
             this.txtReaderGender.TabIndex = 9;
+            this.txtReaderGender.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtReaderDOB
             // 
             this.txtReaderDOB.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtReaderDOB.Location = new System.Drawing.Point(1058, 412);
+            this.txtReaderDOB.Location = new System.Drawing.Point(1085, 404);
             this.txtReaderDOB.Multiline = true;
             this.txtReaderDOB.Name = "txtReaderDOB";
             this.txtReaderDOB.Size = new System.Drawing.Size(100, 22);
@@ -437,7 +362,7 @@ namespace LibraryInformationSystem.View
             // txtValidDate
             // 
             this.txtValidDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtValidDate.Location = new System.Drawing.Point(1058, 506);
+            this.txtValidDate.Location = new System.Drawing.Point(1085, 498);
             this.txtValidDate.Multiline = true;
             this.txtValidDate.Name = "txtValidDate";
             this.txtValidDate.Size = new System.Drawing.Size(100, 22);
@@ -447,10 +372,10 @@ namespace LibraryInformationSystem.View
             // btnFunction
             // 
             this.btnFunction.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnFunction.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnFunction.BackColor = System.Drawing.Color.DarkBlue;
             this.btnFunction.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFunction.ForeColor = System.Drawing.Color.White;
-            this.btnFunction.Location = new System.Drawing.Point(959, 587);
+            this.btnFunction.Location = new System.Drawing.Point(986, 579);
             this.btnFunction.Name = "btnFunction";
             this.btnFunction.Size = new System.Drawing.Size(105, 44);
             this.btnFunction.TabIndex = 4;
@@ -459,12 +384,41 @@ namespace LibraryInformationSystem.View
             this.btnFunction.Visible = false;
             this.btnFunction.Click += new System.EventHandler(this.btnFunction_Click);
             // 
+            // btnReportReader
+            // 
+            this.btnReportReader.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnReportReader.BackColor = System.Drawing.Color.White;
+            this.btnReportReader.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportReader.ForeColor = System.Drawing.Color.DarkBlue;
+            this.btnReportReader.Location = new System.Drawing.Point(508, 212);
+            this.btnReportReader.Name = "btnReportReader";
+            this.btnReportReader.Size = new System.Drawing.Size(181, 29);
+            this.btnReportReader.TabIndex = 13;
+            this.btnReportReader.Text = "In báo cáo độc giả";
+            this.btnReportReader.UseVisualStyleBackColor = false;
+            this.btnReportReader.Click += new System.EventHandler(this.btnReportReader_Click);
+            // 
+            // btnReportCard
+            // 
+            this.btnReportCard.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnReportCard.BackColor = System.Drawing.Color.White;
+            this.btnReportCard.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportCard.ForeColor = System.Drawing.Color.DarkBlue;
+            this.btnReportCard.Location = new System.Drawing.Point(157, 205);
+            this.btnReportCard.Name = "btnReportCard";
+            this.btnReportCard.Size = new System.Drawing.Size(183, 29);
+            this.btnReportCard.TabIndex = 13;
+            this.btnReportCard.Text = "In thẻ thư viện";
+            this.btnReportCard.UseVisualStyleBackColor = false;
+            this.btnReportCard.Click += new System.EventHandler(this.btnReportCard_Click);
+            // 
             // ucFrmReader
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.btnReportCard);
+            this.Controls.Add(this.btnReportReader);
             this.Controls.Add(this.btnSearchReader);
             this.Controls.Add(this.comFieldsValue);
             this.Controls.Add(this.comFields);
@@ -487,12 +441,10 @@ namespace LibraryInformationSystem.View
             this.Controls.Add(this.labelReaderID);
             this.Controls.Add(this.readerGridView);
             this.Name = "ucFrmReader";
-            this.Size = new System.Drawing.Size(1187, 733);
+            this.Size = new System.Drawing.Size(1202, 738);
             this.Load += new System.EventHandler(this.ucFrmReader_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ucFrmReader_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.readerGridView)).EndInit();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -512,14 +464,6 @@ namespace LibraryInformationSystem.View
         private System.Windows.Forms.Button btnAddReader;
         private System.Windows.Forms.Button buttonUpdateReader;
         private System.Windows.Forms.Button btnDeleteReader;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripButton toolStripButton4;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox comFields;
         private System.Windows.Forms.TextBox comFieldsValue;
@@ -536,5 +480,7 @@ namespace LibraryInformationSystem.View
         private System.Windows.Forms.TextBox txtReaderDOB;
         private System.Windows.Forms.TextBox txtValidDate;
         private System.Windows.Forms.Button btnFunction;
+        private System.Windows.Forms.Button btnReportReader;
+        private System.Windows.Forms.Button btnReportCard;
     }
 }

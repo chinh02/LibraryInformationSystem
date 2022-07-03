@@ -30,7 +30,7 @@ namespace LibraryInformationSystem
         private void InitializeComponent()
         {
             this.comFields = new System.Windows.Forms.ComboBox();
-            this.comFieldValue = new System.Windows.Forms.TextBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.searchBtn = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
@@ -53,14 +53,13 @@ namespace LibraryInformationSystem
             this.comFields.Size = new System.Drawing.Size(86, 23);
             this.comFields.TabIndex = 4;
             this.comFields.Text = "Tìm kiếm";
-            this.comFields.SelectedIndexChanged += new System.EventHandler(this.comFields_SelectedIndexChanged);
             // 
-            // comFieldValue
+            // txtSearch
             // 
-            this.comFieldValue.Location = new System.Drawing.Point(238, 129);
-            this.comFieldValue.Name = "comFieldValue";
-            this.comFieldValue.Size = new System.Drawing.Size(350, 22);
-            this.comFieldValue.TabIndex = 6;
+            this.txtSearch.Location = new System.Drawing.Point(238, 129);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(350, 22);
+            this.txtSearch.TabIndex = 6;
             // 
             // searchBtn
             // 
@@ -127,7 +126,7 @@ namespace LibraryInformationSystem
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.searchBtn);
-            this.Controls.Add(this.comFieldValue);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.comFields);
             this.Name = "frmSearchBooks";
             this.Text = "frmSearchBooks";
@@ -139,7 +138,7 @@ namespace LibraryInformationSystem
 
         #endregion
         private System.Windows.Forms.ComboBox comFields;
-        private System.Windows.Forms.TextBox comFieldValue;
+        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button searchBtn;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;

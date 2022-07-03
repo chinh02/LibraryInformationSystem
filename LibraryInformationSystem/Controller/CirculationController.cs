@@ -21,7 +21,7 @@ namespace LibraryInformationSystem.Controller
         }
         public void AddCard(Model.Circulation circulation)
         {
-            string sql = string.Format("INSERT INTO LibMngm.Circulations (ReaderID, BookID, BorrowedDate, SupposedReturn, Status, Note) values ('{0}','{1}','{2}','{3}','{4}','{5}')"
+            string sql = string.Format("INSERT INTO LibMngm.Circulations (ReaderID, BookID, BorrowedDate, SupposedReturn, Status, Note) values (N'{0}',N'{1}',N'{2}',N'{3}',N'{4}',N'{5}')"
                 , circulation.readerID, circulation.bookID ,circulation.borrowedDate, circulation.supposedReturn, circulation.status, circulation.note);
 
                 Execute(sql);
@@ -57,6 +57,17 @@ namespace LibraryInformationSystem.Controller
         {
             string sql = @"SELECT * FROM LibMngm.Circulations WHERE BookID = '" + bookID + "'";
             return GetData(sql);
+        }
+        public DataTable LoadBorrowed()
+        {
+            string sql = @"SELECT A.CardID, A.ReaderID, C.Title, A.BookID, C.Author, A.BorrowedDate, A.SupposedReturn, B.ReaderName FROM ((LibMngm.Circulations A 
+INNER JOIN LibMngm.Readers B ON A.ReaderID = B.ReaderID)
+INNER JOIN LibMngm.Books C ON C.BookID = A.BookID) WHERE A.Status = N'Đang mượn'";
+            return GetData(sql);
+        }
+        public DataTable LoadReturn() { 
+            string sql = @"SELECT * FROM LibMngm.Circulations WHERE Status =N'Đã trả'";
+        return GetData(sql);
         }
     }
 }

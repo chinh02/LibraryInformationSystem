@@ -95,5 +95,10 @@ namespace LibraryInformationSystem
             View.ucFrmCirculation ucFrmCirculation = new View.ucFrmCirculation();
             addUserControl(ucFrmCirculation);
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BTnhom {
+namespace LibraryInformationSystem {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace BTnhom {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rptMuonSach : ReportClass {
+    public class rptDanhSachNguoiMuon : ReportClass {
         
-        public rptMuonSach() {
+        public rptDanhSachNguoiMuon() {
         }
         
         public override string ResourceName {
             get {
-                return "rptMuonSach.rpt";
+                return "rptDanhSachNguoiMuon.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace BTnhom {
         
         public override string FullResourceName {
             get {
-                return "BTnhom.rptMuonSach.rpt";
+                return "LibraryInformationSystem.rptDanhSachNguoiMuon.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace BTnhom {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedrptMuonSach : Component, ICachedReport {
+    public class CachedrptDanhSachNguoiMuon : Component, ICachedReport {
         
-        public CachedrptMuonSach() {
+        public CachedrptDanhSachNguoiMuon() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace BTnhom {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rptMuonSach rpt = new rptMuonSach();
+            rptDanhSachNguoiMuon rpt = new rptDanhSachNguoiMuon();
             rpt.Site = this.Site;
             return rpt;
         }

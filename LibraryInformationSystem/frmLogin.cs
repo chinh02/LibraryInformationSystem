@@ -41,20 +41,20 @@ namespace LibraryInformationSystem
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
-        {   
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = "Data Source=MSI;Initial Catalog=QLTV;Integrated Security=True";
+        { string connstr = "Data Source=MSI;Initial Catalog=LibraryMng;Integrated Security=True";
+            SqlConnection con = new SqlConnection(connstr);
             con.Open();
-            string userName = txtUserName.Text;
-            string userPassword = txtPassword.Text;
-            SqlCommand loginCmd = new SqlCommand("Select UserName, UserPassword from UserTable where UserName='" + txtUserName.Text + "'and UserPassword='" + txtPassword.Text + "'", con);
+
+            SqlCommand loginCmd = new SqlCommand("Select UserName, Password from LibMngm.Users where UserName='" + txtUserName.Text + "'and Password='" + txtPassword.Text + "'", con);
             SqlDataAdapter loginAdapter = new SqlDataAdapter(loginCmd);
             DataTable loginDt = new DataTable();
             loginAdapter.Fill(loginDt);
-            if(loginDt.Rows.Count > 0)
-            {
-                MessageBox.Show("Đúng");
 
+            if (loginDt.Rows.Count > 0)
+            {
+                this.Hide();
+                frmMain frm = new frmMain();
+                frm.Show();
             }
             else 
             {

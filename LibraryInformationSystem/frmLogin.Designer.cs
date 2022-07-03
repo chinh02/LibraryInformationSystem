@@ -124,17 +124,17 @@ namespace LibraryInformationSystem
             // txtUserName
             // 
             this.txtUserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtUserName.Location = new System.Drawing.Point(88, 208);
+            this.txtUserName.Location = new System.Drawing.Point(93, 207);
             this.txtUserName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUserName.Multiline = true;
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(184, 31);
+            this.txtUserName.Size = new System.Drawing.Size(184, 23);
             this.txtUserName.TabIndex = 5;
             // 
             // txtPassword
             // 
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPassword.Location = new System.Drawing.Point(103, 282);
+            this.txtPassword.Location = new System.Drawing.Point(93, 277);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
