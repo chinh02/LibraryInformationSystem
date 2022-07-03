@@ -46,17 +46,11 @@ namespace LibraryInformationSystem.View
             this.txtIDReader = new System.Windows.Forms.TextBox();
             this.txtReaderName = new System.Windows.Forms.TextBox();
             this.txtReaderJob = new System.Windows.Forms.TextBox();
-            this.btnAddReader = new System.Windows.Forms.Button();
-            this.buttonUpdateReader = new System.Windows.Forms.Button();
             this.btnDeleteReader = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.label7 = new System.Windows.Forms.Label();
             this.comFields = new System.Windows.Forms.ComboBox();
             this.comFieldsValue = new System.Windows.Forms.TextBox();
@@ -66,6 +60,12 @@ namespace LibraryInformationSystem.View
             this.txtReaderDOB = new System.Windows.Forms.TextBox();
             this.txtValidDate = new System.Windows.Forms.TextBox();
             this.btnFunction = new System.Windows.Forms.Button();
+            this.btnAddReader = new System.Windows.Forms.Button();
+            this.buttonUpdateReader = new System.Windows.Forms.Button();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.readerGridView)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -82,11 +82,11 @@ namespace LibraryInformationSystem.View
             this.ReaderJob,
             this.ValidDate,
             this.ExpiredDate});
-            this.readerGridView.Location = new System.Drawing.Point(56, 256);
+            this.readerGridView.Location = new System.Drawing.Point(130, 433);
             this.readerGridView.Name = "readerGridView";
             this.readerGridView.RowHeadersWidth = 51;
             this.readerGridView.RowTemplate.Height = 24;
-            this.readerGridView.Size = new System.Drawing.Size(740, 375);
+            this.readerGridView.Size = new System.Drawing.Size(981, 375);
             this.readerGridView.TabIndex = 0;
             this.readerGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.readerGridView_CellClick);
             this.readerGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -157,127 +157,100 @@ namespace LibraryInformationSystem.View
             // 
             this.labelReaderID.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelReaderID.AutoSize = true;
-            this.labelReaderID.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelReaderID.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.labelReaderID.Location = new System.Drawing.Point(860, 271);
+            this.labelReaderID.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelReaderID.ForeColor = System.Drawing.Color.Black;
+            this.labelReaderID.Location = new System.Drawing.Point(43, 202);
             this.labelReaderID.Name = "labelReaderID";
-            this.labelReaderID.Size = new System.Drawing.Size(93, 22);
+            this.labelReaderID.Size = new System.Drawing.Size(125, 26);
             this.labelReaderID.TabIndex = 1;
-            this.labelReaderID.Text = "ID độc giả";
+            this.labelReaderID.Text = "ID độc giả:";
+            this.labelReaderID.Click += new System.EventHandler(this.labelReaderID_Click);
             // 
             // labelReaderName
             // 
             this.labelReaderName.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelReaderName.AutoSize = true;
-            this.labelReaderName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelReaderName.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.labelReaderName.Location = new System.Drawing.Point(860, 318);
+            this.labelReaderName.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelReaderName.ForeColor = System.Drawing.Color.Black;
+            this.labelReaderName.Location = new System.Drawing.Point(50, 250);
             this.labelReaderName.Name = "labelReaderName";
-            this.labelReaderName.Size = new System.Drawing.Size(86, 22);
+            this.labelReaderName.Size = new System.Drawing.Size(118, 26);
             this.labelReaderName.TabIndex = 1;
-            this.labelReaderName.Text = "Họ và tên";
+            this.labelReaderName.Text = "Họ và tên:";
             // 
             // lblDOB
             // 
             this.lblDOB.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblDOB.AutoSize = true;
-            this.lblDOB.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDOB.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblDOB.Location = new System.Drawing.Point(860, 412);
+            this.lblDOB.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDOB.ForeColor = System.Drawing.Color.Black;
+            this.lblDOB.Location = new System.Drawing.Point(630, 202);
             this.lblDOB.Name = "lblDOB";
-            this.lblDOB.Size = new System.Drawing.Size(171, 22);
+            this.lblDOB.Size = new System.Drawing.Size(121, 26);
             this.lblDOB.TabIndex = 1;
-            this.lblDOB.Text = "Ngày tháng năm sinh";
+            this.lblDOB.Text = "Ngày sinh:";
             // 
             // lblValidDate
             // 
             this.lblValidDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblValidDate.AutoSize = true;
-            this.lblValidDate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValidDate.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblValidDate.Location = new System.Drawing.Point(860, 506);
+            this.lblValidDate.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValidDate.ForeColor = System.Drawing.Color.Black;
+            this.lblValidDate.Location = new System.Drawing.Point(630, 297);
             this.lblValidDate.Name = "lblValidDate";
-            this.lblValidDate.Size = new System.Drawing.Size(145, 22);
+            this.lblValidDate.Size = new System.Drawing.Size(198, 26);
             this.lblValidDate.TabIndex = 1;
-            this.lblValidDate.Text = "Ngày đăng ký thẻ";
+            this.lblValidDate.Text = "Ngày đăng ký thẻ:";
             // 
             // lblJob
             // 
             this.lblJob.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblJob.AutoSize = true;
-            this.lblJob.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblJob.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.lblJob.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblJob.ForeColor = System.Drawing.Color.Black;
             this.lblJob.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblJob.Location = new System.Drawing.Point(860, 459);
+            this.lblJob.Location = new System.Drawing.Point(630, 250);
             this.lblJob.Name = "lblJob";
-            this.lblJob.Size = new System.Drawing.Size(108, 22);
+            this.lblJob.Size = new System.Drawing.Size(148, 26);
             this.lblJob.TabIndex = 1;
-            this.lblJob.Text = "Nghề nghiệp";
+            this.lblJob.Text = "Nghề nghiệp:";
             // 
             // txtIDReader
             // 
             this.txtIDReader.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtIDReader.Location = new System.Drawing.Point(1058, 271);
+            this.txtIDReader.Location = new System.Drawing.Point(196, 193);
             this.txtIDReader.Multiline = true;
             this.txtIDReader.Name = "txtIDReader";
-            this.txtIDReader.Size = new System.Drawing.Size(100, 22);
+            this.txtIDReader.Size = new System.Drawing.Size(288, 31);
             this.txtIDReader.TabIndex = 7;
             // 
             // txtReaderName
             // 
             this.txtReaderName.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtReaderName.Location = new System.Drawing.Point(1058, 318);
+            this.txtReaderName.Location = new System.Drawing.Point(196, 240);
             this.txtReaderName.Multiline = true;
             this.txtReaderName.Name = "txtReaderName";
-            this.txtReaderName.Size = new System.Drawing.Size(100, 22);
+            this.txtReaderName.Size = new System.Drawing.Size(288, 32);
             this.txtReaderName.TabIndex = 8;
             // 
             // txtReaderJob
             // 
             this.txtReaderJob.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtReaderJob.Location = new System.Drawing.Point(1058, 459);
+            this.txtReaderJob.Location = new System.Drawing.Point(849, 241);
             this.txtReaderJob.Multiline = true;
             this.txtReaderJob.Name = "txtReaderJob";
-            this.txtReaderJob.Size = new System.Drawing.Size(100, 22);
+            this.txtReaderJob.Size = new System.Drawing.Size(262, 31);
             this.txtReaderJob.TabIndex = 12;
-            // 
-            // btnAddReader
-            // 
-            this.btnAddReader.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnAddReader.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnAddReader.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddReader.ForeColor = System.Drawing.Color.White;
-            this.btnAddReader.Location = new System.Drawing.Point(848, 217);
-            this.btnAddReader.Name = "btnAddReader";
-            this.btnAddReader.Size = new System.Drawing.Size(75, 29);
-            this.btnAddReader.TabIndex = 4;
-            this.btnAddReader.Text = "Thêm";
-            this.btnAddReader.UseVisualStyleBackColor = false;
-            this.btnAddReader.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // buttonUpdateReader
-            // 
-            this.buttonUpdateReader.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.buttonUpdateReader.BackColor = System.Drawing.Color.RoyalBlue;
-            this.buttonUpdateReader.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonUpdateReader.ForeColor = System.Drawing.Color.White;
-            this.buttonUpdateReader.Location = new System.Drawing.Point(960, 217);
-            this.buttonUpdateReader.Name = "buttonUpdateReader";
-            this.buttonUpdateReader.Size = new System.Drawing.Size(75, 29);
-            this.buttonUpdateReader.TabIndex = 5;
-            this.buttonUpdateReader.Text = "Sửa";
-            this.buttonUpdateReader.UseVisualStyleBackColor = false;
-            this.buttonUpdateReader.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnDeleteReader
             // 
             this.btnDeleteReader.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnDeleteReader.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnDeleteReader.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteReader.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteReader.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteReader.Location = new System.Drawing.Point(1076, 217);
+            this.btnDeleteReader.Location = new System.Drawing.Point(630, 362);
             this.btnDeleteReader.Name = "btnDeleteReader";
-            this.btnDeleteReader.Size = new System.Drawing.Size(75, 29);
+            this.btnDeleteReader.Size = new System.Drawing.Size(115, 37);
             this.btnDeleteReader.TabIndex = 6;
             this.btnDeleteReader.Text = "Xóa";
             this.btnDeleteReader.UseVisualStyleBackColor = false;
@@ -301,69 +274,30 @@ namespace LibraryInformationSystem.View
             this.toolStrip1.Text = "toolStrip1";
             this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
             // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(29, 24);
-            this.toolStripButton1.Text = "toolStripButton1";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(29, 24);
-            this.toolStripButton2.Text = "toolStripButton2";
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 31);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 27);
-            // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(29, 24);
-            this.toolStripButton3.Text = "toolStripButton3";
-            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 31);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 27);
-            // 
-            // toolStripButton4
-            // 
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton4.Image = global::LibraryInformationSystem.Properties.Resources.tải_xuống__2_;
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(29, 24);
-            this.toolStripButton4.Text = "toolStripButton4";
-            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 31);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label7.Location = new System.Drawing.Point(27, 71);
+            this.label7.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(25, 38);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(330, 32);
+            this.label7.Size = new System.Drawing.Size(346, 34);
             this.label7.TabIndex = 6;
             this.label7.Text = "Quản lý danh mục độc giả";
             // 
@@ -374,7 +308,7 @@ namespace LibraryInformationSystem.View
             this.comFields.Items.AddRange(new object[] {
             "ID độc giả",
             "Họ và tên"});
-            this.comFields.Location = new System.Drawing.Point(98, 149);
+            this.comFields.Location = new System.Drawing.Point(235, 118);
             this.comFields.Name = "comFields";
             this.comFields.Size = new System.Drawing.Size(121, 24);
             this.comFields.TabIndex = 1;
@@ -383,21 +317,21 @@ namespace LibraryInformationSystem.View
             // comFieldsValue
             // 
             this.comFieldsValue.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.comFieldsValue.Location = new System.Drawing.Point(251, 149);
+            this.comFieldsValue.Location = new System.Drawing.Point(387, 107);
             this.comFieldsValue.Multiline = true;
             this.comFieldsValue.Name = "comFieldsValue";
-            this.comFieldsValue.Size = new System.Drawing.Size(354, 24);
+            this.comFieldsValue.Size = new System.Drawing.Size(364, 43);
             this.comFieldsValue.TabIndex = 2;
             // 
             // btnSearchReader
             // 
             this.btnSearchReader.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnSearchReader.BackColor = System.Drawing.Color.White;
-            this.btnSearchReader.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchReader.Font = new System.Drawing.Font("Times New Roman", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchReader.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnSearchReader.Location = new System.Drawing.Point(641, 144);
+            this.btnSearchReader.Location = new System.Drawing.Point(782, 107);
             this.btnSearchReader.Name = "btnSearchReader";
-            this.btnSearchReader.Size = new System.Drawing.Size(115, 29);
+            this.btnSearchReader.Size = new System.Drawing.Size(124, 43);
             this.btnSearchReader.TabIndex = 3;
             this.btnSearchReader.Text = "Tìm kiếm";
             this.btnSearchReader.UseVisualStyleBackColor = false;
@@ -407,40 +341,40 @@ namespace LibraryInformationSystem.View
             // 
             this.lblGender.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblGender.AutoSize = true;
-            this.lblGender.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGender.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblGender.Location = new System.Drawing.Point(860, 365);
+            this.lblGender.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGender.ForeColor = System.Drawing.Color.Black;
+            this.lblGender.Location = new System.Drawing.Point(50, 297);
             this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(81, 22);
+            this.lblGender.Size = new System.Drawing.Size(112, 26);
             this.lblGender.TabIndex = 1;
-            this.lblGender.Text = "Giới tính";
+            this.lblGender.Text = "Giới tính:";
             // 
             // txtReaderGender
             // 
             this.txtReaderGender.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtReaderGender.Location = new System.Drawing.Point(1058, 365);
+            this.txtReaderGender.Location = new System.Drawing.Point(196, 287);
             this.txtReaderGender.Multiline = true;
             this.txtReaderGender.Name = "txtReaderGender";
-            this.txtReaderGender.Size = new System.Drawing.Size(100, 22);
+            this.txtReaderGender.Size = new System.Drawing.Size(288, 32);
             this.txtReaderGender.TabIndex = 9;
             // 
             // txtReaderDOB
             // 
             this.txtReaderDOB.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtReaderDOB.Location = new System.Drawing.Point(1058, 412);
+            this.txtReaderDOB.Location = new System.Drawing.Point(849, 194);
             this.txtReaderDOB.Multiline = true;
             this.txtReaderDOB.Name = "txtReaderDOB";
-            this.txtReaderDOB.Size = new System.Drawing.Size(100, 22);
+            this.txtReaderDOB.Size = new System.Drawing.Size(262, 30);
             this.txtReaderDOB.TabIndex = 10;
             this.txtReaderDOB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtValidDate
             // 
             this.txtValidDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtValidDate.Location = new System.Drawing.Point(1058, 506);
+            this.txtValidDate.Location = new System.Drawing.Point(849, 288);
             this.txtValidDate.Multiline = true;
             this.txtValidDate.Name = "txtValidDate";
-            this.txtValidDate.Size = new System.Drawing.Size(100, 22);
+            this.txtValidDate.Size = new System.Drawing.Size(262, 31);
             this.txtValidDate.TabIndex = 11;
             this.txtValidDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -448,22 +382,94 @@ namespace LibraryInformationSystem.View
             // 
             this.btnFunction.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnFunction.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnFunction.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFunction.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFunction.ForeColor = System.Drawing.Color.White;
-            this.btnFunction.Location = new System.Drawing.Point(959, 587);
+            this.btnFunction.Location = new System.Drawing.Point(858, 362);
             this.btnFunction.Name = "btnFunction";
-            this.btnFunction.Size = new System.Drawing.Size(105, 44);
+            this.btnFunction.Size = new System.Drawing.Size(135, 37);
             this.btnFunction.TabIndex = 4;
             this.btnFunction.Text = "Cập nhật";
             this.btnFunction.UseVisualStyleBackColor = false;
             this.btnFunction.Visible = false;
             this.btnFunction.Click += new System.EventHandler(this.btnFunction_Click);
             // 
+            // btnAddReader
+            // 
+            this.btnAddReader.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnAddReader.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnAddReader.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddReader.ForeColor = System.Drawing.Color.White;
+            this.btnAddReader.Location = new System.Drawing.Point(153, 362);
+            this.btnAddReader.Name = "btnAddReader";
+            this.btnAddReader.Size = new System.Drawing.Size(133, 37);
+            this.btnAddReader.TabIndex = 4;
+            this.btnAddReader.Text = "Thêm";
+            this.btnAddReader.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnAddReader.UseVisualStyleBackColor = false;
+            this.btnAddReader.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // buttonUpdateReader
+            // 
+            this.buttonUpdateReader.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.buttonUpdateReader.BackColor = System.Drawing.Color.RoyalBlue;
+            this.buttonUpdateReader.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonUpdateReader.ForeColor = System.Drawing.Color.White;
+            this.buttonUpdateReader.Location = new System.Drawing.Point(399, 362);
+            this.buttonUpdateReader.Name = "buttonUpdateReader";
+            this.buttonUpdateReader.Size = new System.Drawing.Size(118, 37);
+            this.buttonUpdateReader.TabIndex = 5;
+            this.buttonUpdateReader.Text = "Sửa";
+            this.buttonUpdateReader.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.buttonUpdateReader.UseVisualStyleBackColor = false;
+            this.buttonUpdateReader.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(29, 24);
+            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(29, 28);
+            this.toolStripButton2.Text = "toolStripButton2";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(29, 28);
+            this.toolStripButton3.Text = "toolStripButton3";
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
+            // 
+            // toolStripButton4
+            // 
+            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton4.Image = global::LibraryInformationSystem.Properties.Resources.tải_xuống__2_;
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.Size = new System.Drawing.Size(29, 28);
+            this.toolStripButton4.Text = "toolStripButton4";
+            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
+            // 
             // ucFrmReader
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.Lavender;
+            this.BackgroundImage = global::LibraryInformationSystem.Properties.Resources.Free_vector_000477_nen_mau_nuoc_may;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.btnSearchReader);
             this.Controls.Add(this.comFieldsValue);
@@ -509,7 +515,6 @@ namespace LibraryInformationSystem.View
         private System.Windows.Forms.TextBox txtIDReader;
         private System.Windows.Forms.TextBox txtReaderName;
         private System.Windows.Forms.TextBox txtReaderJob;
-        private System.Windows.Forms.Button btnAddReader;
         private System.Windows.Forms.Button buttonUpdateReader;
         private System.Windows.Forms.Button btnDeleteReader;
         private System.Windows.Forms.ToolStrip toolStrip1;
@@ -536,5 +541,6 @@ namespace LibraryInformationSystem.View
         private System.Windows.Forms.TextBox txtReaderDOB;
         private System.Windows.Forms.TextBox txtValidDate;
         private System.Windows.Forms.Button btnFunction;
+        internal System.Windows.Forms.Button btnAddReader;
     }
 }

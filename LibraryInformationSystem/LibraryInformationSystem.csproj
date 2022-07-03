@@ -181,5 +181,77 @@
   <ItemGroup>
     <None Include="Resources\tải xuống %281%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3725420_cv_20_thu_vien_dep_Tinhte_16.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\31.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4-Noi-dung-co-ban-trong-Lien-ket-trien-khai-dich-vu-lien-thu-vien.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\71.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10_4_16.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3725420_cv_20_thu_vien_dep_Tinhte_161.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tải xuống %283%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tải xuống.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-red-cross-vector-icon-no-symbol-rejected-cancel-negative-sign-deny-png-image_3216548.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-red-push-pin-isolated-realistic-thumbtack-board-tack-png-image_3419014.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-vector-plus-icon-png-image_533007.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-vector-tools-repair-icon-png-image_533359.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-vector-plus-icon-png-image_5330071.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %282%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %283%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %284%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Free-vector-000477-nen-mau-nuoc-may.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\v4-1200px-Remove-Blue-or-Green-Hair-Dye-from-Hair-Without-Bleaching-Step-20.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bau-troi-may-trang.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Free-vector-000477-nen-mau-nuoc-may1.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

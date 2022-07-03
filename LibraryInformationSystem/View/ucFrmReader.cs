@@ -160,6 +160,11 @@ namespace LibraryInformationSystem.View
 
         }
 
+        private void labelReaderID_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnFunction_Click(object sender, EventArgs e)
         {
             if (AddNewFlag == true)

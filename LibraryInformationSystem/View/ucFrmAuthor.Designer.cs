@@ -46,12 +46,13 @@ namespace LibraryInformationSystem.View
             // grdAuthor
             // 
             this.grdAuthor.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.grdAuthor.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.grdAuthor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdAuthor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.AuthorID,
             this.AuthorName,
             this.YOB});
-            this.grdAuthor.Location = new System.Drawing.Point(87, 191);
+            this.grdAuthor.Location = new System.Drawing.Point(40, 158);
             this.grdAuthor.Name = "grdAuthor";
             this.grdAuthor.RowHeadersWidth = 51;
             this.grdAuthor.RowTemplate.Height = 24;
@@ -87,11 +88,11 @@ namespace LibraryInformationSystem.View
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label1.Location = new System.Drawing.Point(106, 82);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(351, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(297, 33);
+            this.label1.Size = new System.Drawing.Size(383, 39);
             this.label1.TabIndex = 1;
             this.label1.Text = "Quản lý danh mục tác giả";
             // 
@@ -99,60 +100,63 @@ namespace LibraryInformationSystem.View
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label2.Location = new System.Drawing.Point(783, 192);
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(735, 219);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 22);
+            this.label2.Size = new System.Drawing.Size(119, 27);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Mã tác giả";
+            this.label2.Text = "Mã tác giả:";
             // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label3.Location = new System.Drawing.Point(783, 265);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(735, 365);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 22);
+            this.label3.Size = new System.Drawing.Size(124, 27);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Tên tác giả";
+            this.label3.Text = "Tên tác giả:";
             // 
             // label4
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label4.Location = new System.Drawing.Point(783, 338);
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(735, 293);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 22);
+            this.label4.Size = new System.Drawing.Size(109, 27);
             this.label4.TabIndex = 2;
-            this.label4.Text = "Năm sinh";
+            this.label4.Text = "Năm sinh:";
             // 
             // txtAuthorID
             // 
             this.txtAuthorID.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtAuthorID.Location = new System.Drawing.Point(887, 192);
+            this.txtAuthorID.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAuthorID.Location = new System.Drawing.Point(882, 212);
             this.txtAuthorID.Name = "txtAuthorID";
-            this.txtAuthorID.Size = new System.Drawing.Size(100, 22);
+            this.txtAuthorID.Size = new System.Drawing.Size(209, 34);
             this.txtAuthorID.TabIndex = 3;
             // 
             // txtAuthorName
             // 
             this.txtAuthorName.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtAuthorName.Location = new System.Drawing.Point(887, 266);
+            this.txtAuthorName.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAuthorName.Location = new System.Drawing.Point(882, 286);
             this.txtAuthorName.Name = "txtAuthorName";
-            this.txtAuthorName.Size = new System.Drawing.Size(100, 22);
+            this.txtAuthorName.Size = new System.Drawing.Size(209, 34);
             this.txtAuthorName.TabIndex = 3;
             // 
             // txtAuthorYOB
             // 
             this.txtAuthorYOB.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtAuthorYOB.Location = new System.Drawing.Point(887, 338);
+            this.txtAuthorYOB.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAuthorYOB.Location = new System.Drawing.Point(882, 358);
             this.txtAuthorYOB.Name = "txtAuthorYOB";
-            this.txtAuthorYOB.Size = new System.Drawing.Size(100, 22);
+            this.txtAuthorYOB.Size = new System.Drawing.Size(209, 34);
             this.txtAuthorYOB.TabIndex = 3;
             // 
             // ucFrmAuthor
@@ -160,6 +164,8 @@ namespace LibraryInformationSystem.View
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::LibraryInformationSystem.Properties.Resources.Free_vector_000477_nen_mau_nuoc_may;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.txtAuthorYOB);
             this.Controls.Add(this.txtAuthorName);
             this.Controls.Add(this.txtAuthorID);
